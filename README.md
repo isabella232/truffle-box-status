@@ -30,34 +30,30 @@ Please note that the server will start automatically next time you log in with t
     truffle unbox truffle-box-status
     ```
 
-3. Install the node dependencies.
-    ```javascript
-    npm install
-    ```
-4. Run Ethereum RPC on port **8546**. For simplicity and development we will be using Ethereum TestRPC.
+3. Run Ethereum RPC on port **8546**. For simplicity and development we will be using Ethereum TestRPC.
     ```javascript
     testrpc -p 8546
     ```
 
-5. *If you use Android* then make TestRPC accessible from your device.
+4. *If you use Android* then make TestRPC accessible from your device.
     ```javascript
     adb reverse tcp:8546 tcp:8546
     ```
 
-6. Switch node in Status.
+5. Switch node in Status.
     ```javascript
     status-dev-cli switch-node http://localhost:8546
     ```
 
    Of course, there can be options. You can use go-ethereum instead of TestRPC, and instead of port forwarding you can switch to any other accessible node using its IP address.
 
-7. Compile and migrate the contracts.
+6. Compile and migrate the contracts.
     ```javascript
     truffle compile
     truffle migrate
     ```
 
-8. *If you use Android* the application won't be accessible automatically, since it runs on port 3000 and your
+7. *If you use Android* the application won't be accessible automatically, since it runs on port 3000 and your
    device/emulator knows nothing about it. Execute the following to make web application accessible:
     ```javascript
     adb reverse tcp:3000 tcp:3000
@@ -96,12 +92,13 @@ To build the application for production, use the build command. A production bui
 
 * __Why is there both a truffle.js file and a truffle-config.js file?__
 
-    Truffle requires the truffle.js file be named truffle-config on Windows machines. Feel free to delete the file that doesn't correspond to your platform.
+    `truffle-config.js` is a copy of `truffle.js` for compatibility with Windows development environments. Feel free to it if it's irrelevant to your platform.
 
 * __Where is my production build?__
 
     The production build will be in the build_webpack folder. This is because Truffle outputs contract compilations to the build folder.
 
 * __Where can I find more documentation?__
-
-    All truffle boxes are a marriage of [Truffle](http://truffleframework.com/) and a React setup created with [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Either one would be a great place to start!
+  * [Status.im mobile Ethereum client](https://docs.status.im/)
+  * [Truffle Framework](http://truffleframework.com/docs/)
+  * [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
